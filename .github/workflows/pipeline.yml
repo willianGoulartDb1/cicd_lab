@@ -1,0 +1,21 @@
+name: Pipeline
+
+on: [push]
+
+jobs:
+  runs-on: ubuntu-latest
+
+  steps:
+    - name: Copia os arquivos do repo
+      uses: actions/checkout@v3
+
+    - name: Instalar o Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11.1'
+
+    - name: Instalação de dependencias do projeto
+      run: echo "Instalando dependencias"
+
+    - name: Testes automatizados
+      run: echo "Realizando os testes"
